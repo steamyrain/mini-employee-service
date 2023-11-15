@@ -1,0 +1,51 @@
+databaseChangeLog:
+  - changeSet:
+      id: 202311131801
+      author: Reinhard
+      comment: new employee table
+      changes:
+        - tagDatabase:
+            tag: 202311131801
+        - sqlFile:
+            dbms: postgresql
+            path: db/changelog/ddl.sql
+  - changeSet:
+      id: 202311141750
+      author: Reinhard
+      comment: new message_template table
+      changes:
+        - tagDatabase:
+            tag: 202311141750
+        - sqlFile:
+            dbms: postgresql
+            path: db/changelog/ddl-message.sql
+  - changeSet:
+      id: 202311141751
+      author: Reinhard
+      comment: insert employee
+      changes:
+        - tagDatabase:
+            tag: 202311141751
+        - sqlFile:
+            dbms: postgresql
+            path: db/changelog/dml.sql
+  - changeSet:
+      id: 202311142039
+      author: Reinhard
+      comment: insert message template
+      changes:
+        - tagDatabase:
+            tag: 202311142039
+        - sqlFile:
+            dbms: postgresql
+            path: db/changelog/dml-message.sql
+  - changeSet:
+      id: 202311151005
+      author: Reinhard
+      comment: create table on leave
+      changes:
+        - tagDatabase:
+            tag: 202311151005
+        - sqlFile:
+            dbms: postgresql
+            path: db/changelog/ddl-leave.sql

@@ -1,0 +1,25 @@
+application:
+  database:
+    password: master
+    username: postgres
+    port: 5432
+    name: mini_employee
+spring:
+  datasource:
+    password: ${application.database.password}
+    username: ${application.database.username}
+    url: jdbc:postgresql://postgres:${application.database.port}/${application.database.name}?useSSL=false
+    hikari:
+      connection-timeout: 60000 #milisecs to wait for connection from pool
+      idle-timeout: 300000 #milisecs connection allowed to sit idle in pool
+      minimumIdle: 1
+      maximumPoolSize: 4
+  liquibase:
+    change-log: classpath:/db/changelog.yml
+  jpa:
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+logging:
+  level:
+    root: INFO
